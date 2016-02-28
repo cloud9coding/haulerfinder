@@ -1,0 +1,61 @@
+<%= form_for(@bid_request) do |f| %>
+  <% if @bid_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bid_request.errors.count, "error") %> prohibited this bid_request from being saved:</h2>
+
+      <ul>
+      <% @bid_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pick_up_street %><br>
+    <%= f.text_field :pick_up_street %>
+  </div>
+  <div class="field">
+    <%= f.label :pick_up_city_state %><br>
+    <%= f.text_field :pick_up_city_state %>
+  </div>
+  <div class="field">
+    <%= f.label :pick_up_zip %><br>
+    <%= f.text_field :pick_up_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_off_street %><br>
+    <%= f.text_field :drop_off_street %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_off_city_state %><br>
+    <%= f.text_field :drop_off_city_state %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_off_zip %><br>
+    <%= f.text_field :drop_off_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :pick_up_date %><br>
+    <%= f.date_select :pick_up_date %>
+  </div>
+  <div class="field">
+    <%= f.label :pick_up_time %><br>
+    <%= f.time_select :pick_up_time %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_off_date %><br>
+    <%= f.date_select :drop_off_date %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_off_time %><br>
+    <%= f.time_select :drop_off_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

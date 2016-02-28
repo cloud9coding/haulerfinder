@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bid_request.user %>
+</p>
+
+<p>
+  <strong>Pick up street:</strong>
+  <%= @bid_request.pick_up_street %>
+</p>
+
+<p>
+  <strong>Pick up city state:</strong>
+  <%= @bid_request.pick_up_city_state %>
+</p>
+
+<p>
+  <strong>Pick up zip:</strong>
+  <%= @bid_request.pick_up_zip %>
+</p>
+
+<p>
+  <strong>Drop off street:</strong>
+  <%= @bid_request.drop_off_street %>
+</p>
+
+<p>
+  <strong>Drop off city state:</strong>
+  <%= @bid_request.drop_off_city_state %>
+</p>
+
+<p>
+  <strong>Drop off zip:</strong>
+  <%= @bid_request.drop_off_zip %>
+</p>
+
+<p>
+  <strong>Pick up date:</strong>
+  <%= @bid_request.pick_up_date %>
+</p>
+
+<p>
+  <strong>Pick up time:</strong>
+  <%= @bid_request.pick_up_time %>
+</p>
+
+<p>
+  <strong>Drop off date:</strong>
+  <%= @bid_request.drop_off_date %>
+</p>
+
+<p>
+  <strong>Drop off time:</strong>
+  <%= @bid_request.drop_off_time %>
+</p>
+
+<%= link_to 'Edit', edit_bid_request_path(@bid_request) %> |
+<%= link_to 'Back', bid_requests_path %>

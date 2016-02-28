@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bid_requests
+
   resources :horses
 
   devise_for :admin_users, ActiveAdmin::Devise.config
