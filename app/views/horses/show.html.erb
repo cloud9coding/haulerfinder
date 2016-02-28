@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Horse -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Horse %></h1>
+</div>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @horse.breed %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:breed) %></dt>
+      <dd><pre class="prettyprint"><%= @horse.breed %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:age) %></dt>
+      <dd><pre class="prettyprint"><%= @horse.age %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:height) %></dt>
+      <dd><pre class="prettyprint"><%= @horse.height %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @horse.weight %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @horse.age %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              horses_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_horse_path(@horse), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              horse_path(@horse),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Height:</strong>
-  <%= @horse.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @horse.weight %>
-</p>
-
-<p>
-  <strong>Bid request:</strong>
-  <%= @horse.bid_request %>
-</p>
-
-<%= link_to 'Edit', edit_horse_path(@horse) %> |
-<%= link_to 'Back', horses_path %>
