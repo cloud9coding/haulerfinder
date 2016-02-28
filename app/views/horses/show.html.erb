@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @horse.breed %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @horse.age %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @horse.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @horse.weight %>
+</p>
+
+<p>
+  <strong>Bid request:</strong>
+  <%= @horse.bid_request %>
+</p>
+
+<%= link_to 'Edit', edit_horse_path(@horse) %> |
+<%= link_to 'Back', horses_path %>
