@@ -1,61 +1,70 @@
-<%= form_for(@bid_request) do |f| %>
-  <% if @bid_request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bid_request.errors.count, "error") %> prohibited this bid_request from being saved:</h2>
-
-      <ul>
-      <% @bid_request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @bid_request, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :pick_up_street, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pick_up_street, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pick_up_city_state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pick_up_city_state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pick_up_zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pick_up_zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drop_off_street, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :drop_off_street, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drop_off_city_state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :drop_off_city_state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drop_off_zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :drop_off_zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pick_up_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :pick_up_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pick_up_time, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.time_select :pick_up_time, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drop_off_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :drop_off_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drop_off_time, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.time_select :drop_off_time, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :pick_up_street %><br>
-    <%= f.text_field :pick_up_street %>
-  </div>
-  <div class="field">
-    <%= f.label :pick_up_city_state %><br>
-    <%= f.text_field :pick_up_city_state %>
-  </div>
-  <div class="field">
-    <%= f.label :pick_up_zip %><br>
-    <%= f.text_field :pick_up_zip %>
-  </div>
-  <div class="field">
-    <%= f.label :drop_off_street %><br>
-    <%= f.text_field :drop_off_street %>
-  </div>
-  <div class="field">
-    <%= f.label :drop_off_city_state %><br>
-    <%= f.text_field :drop_off_city_state %>
-  </div>
-  <div class="field">
-    <%= f.label :drop_off_zip %><br>
-    <%= f.text_field :drop_off_zip %>
-  </div>
-  <div class="field">
-    <%= f.label :pick_up_date %><br>
-    <%= f.date_select :pick_up_date %>
-  </div>
-  <div class="field">
-    <%= f.label :pick_up_time %><br>
-    <%= f.time_select :pick_up_time %>
-  </div>
-  <div class="field">
-    <%= f.label :drop_off_date %><br>
-    <%= f.date_select :drop_off_date %>
-  </div>
-  <div class="field">
-    <%= f.label :drop_off_time %><br>
-    <%= f.time_select :drop_off_time %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  bid_requests_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

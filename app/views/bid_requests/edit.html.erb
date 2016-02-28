@@ -1,6 +1,5 @@
-<h1>Editing bid_request</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @bid_request %> |
-<%= link_to 'Back', bid_requests_path %>
+<%- model_class = BidRequest -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => BidRequest %></h1>
+</div>
+<%= render :partial => 'form' %>

@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = BidRequest -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => BidRequest %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @bid_request.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pick_up_street) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.pick_up_street %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pick_up_city_state) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.pick_up_city_state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pick_up_zip) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.pick_up_zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:drop_off_street) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.drop_off_street %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:drop_off_city_state) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.drop_off_city_state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:drop_off_zip) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.drop_off_zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pick_up_date) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.pick_up_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pick_up_time) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.pick_up_time %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:drop_off_date) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.drop_off_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:drop_off_time) %></dt>
+      <dd><pre class="prettyprint"><%= @bid_request.drop_off_time %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Pick up street:</strong>
-  <%= @bid_request.pick_up_street %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              bid_requests_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_bid_request_path(@bid_request), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              bid_request_path(@bid_request),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Pick up city state:</strong>
-  <%= @bid_request.pick_up_city_state %>
-</p>
-
-<p>
-  <strong>Pick up zip:</strong>
-  <%= @bid_request.pick_up_zip %>
-</p>
-
-<p>
-  <strong>Drop off street:</strong>
-  <%= @bid_request.drop_off_street %>
-</p>
-
-<p>
-  <strong>Drop off city state:</strong>
-  <%= @bid_request.drop_off_city_state %>
-</p>
-
-<p>
-  <strong>Drop off zip:</strong>
-  <%= @bid_request.drop_off_zip %>
-</p>
-
-<p>
-  <strong>Pick up date:</strong>
-  <%= @bid_request.pick_up_date %>
-</p>
-
-<p>
-  <strong>Pick up time:</strong>
-  <%= @bid_request.pick_up_time %>
-</p>
-
-<p>
-  <strong>Drop off date:</strong>
-  <%= @bid_request.drop_off_date %>
-</p>
-
-<p>
-  <strong>Drop off time:</strong>
-  <%= @bid_request.drop_off_time %>
-</p>
-
-<%= link_to 'Edit', edit_bid_request_path(@bid_request) %> |
-<%= link_to 'Back', bid_requests_path %>
