@@ -1,4 +1,5 @@
 ActiveAdmin.register Horse do
+  permit_params :breed, :age, :height, :weight
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
